@@ -1,0 +1,7 @@
+<% if (typeof error !== 'undefined' && error.length != 0) { %>
+<input type="hidden" id="alert_error" value="<%= error %>">
+<% } %>
+
+<% if (typeof success !== 'undefined' && success.length != 0) { %>
+<input type="hidden" id="alert_success" value="<%= success %>">
+<% } %>

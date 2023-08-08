@@ -1,0 +1,41 @@
+<div class="container">
+    <h1>Contact</h1>
+    
+    <div class="row">
+        <div class="col-md-8">
+            <div id="flash-msg"></div>
+            <a href="/contact/add" class="btn btn-primary">Tambah contact</a>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col" style="width: 10%;">No.</th>
+                        <th scope="col" style="width: 25%;">Action</th>
+                        <th scope="col">Nama</th>
+                        <th scope="col">Email</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <% contacts.forEach((d, index) => { %>
+                        <tr>
+                            <th scope="row"><%= index+1 %></th>
+                            <td>
+                                <a href="/contact/detail/<%= d.nama %>" class="btn btn-sm btn-info">
+                                    <i class="bi bi-info-circle"></i>
+                                </a>
+                                <a href="/contact/edit/<%= d.nama %>" class="btn btn-sm btn-warning">
+                                    <i class="bi bi-pencil"></i>
+                                </a>
+                                <form action="/contact?_method=DELETE" method="post" class="d-inline">
+                                    <input type="hidden" name="nama" value="<%= d.nama %>">
+                                    <button type="submit" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
+                                </form>
+                            </td>
+                            <td><%= d.nama %></td>
+                            <td><%= d.email %></td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

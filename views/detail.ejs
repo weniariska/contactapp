@@ -1,0 +1,25 @@
+<div class="container py-3">
+    <h1>Detail Contact</h1>
+    <div class="row">
+        <div class="col-md-8">
+            <% if (contact) { %>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <%= contact.nama %>
+                    </h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">
+                        <%= contact.email %>
+                    </h6>
+                    <a href="/contact" class="card-link">Kembali</a>
+                </div>
+            </div>
+            <% } else { %>
+            <div class="alert alert-danger">
+                <p>Contact tidak ditemukan...</p>
+                <a href="/contact" class="card-link">Kembali</a>
+            </div>
+            <% } %>
+        </div>
+    </div>
+</div>
